@@ -28,24 +28,11 @@ ini_set('display_errors', 1);
                 <li><a href="about.html">About Us</a></li>
                 <li><a href="contact.html">Contact</a></li>
                 <li><a href="login.php">Member Area</a></li>
+                <li><a href="reviews.php">Reviews</a></li>
             </ul>
         </nav>
     </section>
 </header>
-    
-    <section>
-    <h2>Our Teddy Bears</h2>
-
-    <p>
-        Browse our collection of teddy bears below. Each item includes a description 
-        and image to help you find the perfect teddy for you or your loved ones.
-    </p>
-
-    <p>
-        New items are regularly added by our members through the admin system, ensuring 
-        our collection stays fresh and up to date.
-    </p>
-</section>
 
 <main>
     <section>
