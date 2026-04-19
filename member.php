@@ -5,7 +5,29 @@ if (!isset($_SESSION['user'])) {
     header("Location: login.php");
     exit();
 }
+if ($_SESSION['role'] === 'admin' && $_SERVER["REQUEST_METHOD"] == "POST") {
+
+    $image = $_FILES['image']['name'];
+
+    move_uploaded_file(
+        $_FILES['image']['tmp_name'],
+        "images/" . $image
+    );
+
+    $stmt = $pdo->prepare("
+        INSERT INTO teddy_bears (name, description, image)
+        VALUES (:name, :description, :image)
+    ");
+
+    $stmt->execute([
+        'name' => $_POST['name'],
+        'description' => $_POST['description'],
+        'image' => $image
+    ]);
+}
 ?>
+?>
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -26,30 +48,27 @@ if (!isset($_SESSION['user'])) {
 
 <main>
 
-<section>
-    <h2>Admin Dashboard</h2>
+    <h2>Welcome Admin</h2>
 
-    <p>
-        Welcome to the member area. From here you can manage the teddy bear collection 
-        by adding new items to the database.
-    </p>
+    <p>You are now logged in.</p>
 
-    <p>
-        Use the form below to upload a new teddy, including its name, description, 
-        and image. Once added, it will automatically appear on the items page.
-    </p>
-</section>
-
-
+<?php if ($_SESSION['role'] === 'admin') { ?>
 
     <h3>Add Teddy</h3>
 
     <form method="post" enctype="multipart/form-data">
         <input type="text" name="name" placeholder="Teddy Name" required>
-        <input type="text" name="description" placeholder="Description" required>
+        <textarea name="description" placeholder="Description" required></textarea>
         <input type="file" name="image" required>
-        <button type="submit">Add</button>
+        <button type="submit">Add Teddy</button>
     </form>
+
+<?php } else { ?>
+
+    <h3>Member Area</h3>
+    <p>As a user, you cannot edit teddies.</p>
+
+<?php } ?>
     
         <a href="logout.php">
         <button type="button">Log Out</button>
