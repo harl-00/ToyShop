@@ -7,6 +7,7 @@ ini_set('display_errors', 1);
 <html lang="en">
 
 <head>
+    
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Teddy Collection</title>
@@ -28,6 +29,7 @@ ini_set('display_errors', 1);
                 <li><a href="about.html">About Us</a></li>
                 <li><a href="contact.html">Contact</a></li>
                 <li><a href="login.php">Member Area</a></li>
+                <li><a href="reviews.php">Reviews</a></li>
             </ul>
         </nav>
     </section>
@@ -38,22 +40,46 @@ ini_set('display_errors', 1);
         <h2>Welcome</h2>
         <p>We provide a wide range of collectible teddy bears for enthusiasts and collectors.</p>
     </section>
+    
+    <section>
+    <h3>Why Choose Us?</h3>
 
-    <section id="content">
-        <section class="product">
+    <ul>
+        <li>Wide range of teddy bears</li>
+        <li>Affordable prices</li>
+        <li>High-quality materials</li>
+        <li>Perfect gifts for all ages</li>
+    </ul>
+    </section>
+
+<section id="content">
+    <section class="product">
+
+        <figure>
             <img src="images/teddy1.jpg" alt="Classic Teddy">
-            <p>Classic Teddy</p>
-        </section>
+            <figcaption>Classic Teddy</figcaption>
+        </figure>
 
-        <section class="product">
-            <img src="images/teddy2.jpg" alt="Brown Teddy">
-            <p>Brown Teddy</p>
-        </section>
+    </section>
+</section>
 
-        <section class="product">
-            <img src="images/teddy3.jpg" alt="Vintage Teddy">
-            <p>Vintage Teddy</p>
-        </section>
+<section class="product">
+
+    <figure>
+        <img src="images/teddy2.jpg" alt="Brown Teddy">
+        <figcaption>Brown Teddy</figcaption>
+    </figure>
+
+</section>
+
+<section class="product">
+
+    <figure>
+        <img src="images/teddy3.jpg" alt="Vintage Teddy">
+        <figcaption>Vintage Teddy</figcaption>
+    </figure>
+
+</section>
     </section>
 </main>
 
