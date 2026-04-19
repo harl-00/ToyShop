@@ -57,14 +57,9 @@ ini_set('display_errors', 1);
     </section>
 </main>
 
-
-
-</section>
-</body>
-</main>
-
 <?php include 'footer.php'; ?>
 
+</section>
+
 </body>
-</html>
 </html>
